@@ -1,4 +1,4 @@
-__author__ = 'Marcelino'
+__author__ = 'marcelinodom'
 
 import xbmc
 import os
@@ -14,8 +14,9 @@ ADDONS_PATH = xbmc.translatePath(os.path.join(HOME_PATH,"addons"))
 CURRENT_ADDON_PATH = xbmc.translatePath(os.path.join(ADDONS_PATH,"service.cecanyway"))
 RESOURCES_PATH = xbmc.translatePath(os.path.join(CURRENT_ADDON_PATH,"Resources"))
 CECANYWAY_PATH = xbmc.translatePath(os.path.join(RESOURCES_PATH,"cecanyway"))
+CONF_PATH = xbmc.translatePath(os.path.join(RESOURCES_PATH,"cecanyway.conf"))
 
-arguments = "-d -f cecanyway.conf"
+arguments = "-d -f \"%s\"" % CONF_PATH
 
 os.system("chmod +x \"%s\"" % CECANYWAY_PATH)
 os.system("\"%s\" %s " % (CECANYWAY_PATH, arguments))
